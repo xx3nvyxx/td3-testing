@@ -12,16 +12,14 @@ int main()
     td3Math mathstuff;
     string func = "all";
     mathstuff.setFunctions(func);
-    string op1, op2, op;
-    while (true)
-    {
-        cout << endl << "First operand: ";
-        cin >> op1;
-        cout << endl << "Second operand: ";
-        cin >> op2;
-        cout << endl << "Operation: ";
-        cin >> op;
-        cout << "Result: " << mathstuff.wrapper(td3Utility::makeVector(op1,op2),op) << endl;
-    }
+    cout << "Testing addition: ";
+    if (mathstuff.wrapper(td3Utility::makeVector("9","5"),"+") == "14"
+    &&  mathstuff.wrapper(td3Utility::makeVector("4","7.3"),"+") == "11.3"
+    &&  mathstuff.wrapper(td3Utility::makeVector("7.4","8"), "+") == "15.4"
+    &&  mathstuff.wrapper(td3Utility::makeVector("2.3","14.8"),"+") == "17.1")
+        cout << "Success!";
+    else
+        cout << "Failed!";
+    cout << endl;
     return 0;
 }
