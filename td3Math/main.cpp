@@ -9,14 +9,13 @@ using namespace std;
 
 int main()
 {
-    td3Math mathstuff;
     string func = "all";
-    mathstuff.setFunctions(func);
+    td3Math::setFunctions(func);
     cout << "Testing addition: ";
-    if (mathstuff.wrapper(td3Utility::makeVector("9","5"),"+") == "14"
-    &&  mathstuff.wrapper(td3Utility::makeVector("4","7.3"),"+") == "11.3"
-    &&  mathstuff.wrapper(td3Utility::makeVector("7.4","8"), "+") == "15.4"
-    &&  mathstuff.wrapper(td3Utility::makeVector("2.3","14.8"),"+") == "17.1")
+    if (td3Math::wrapper(td3Utility::makeVector("9","5"),"+") == "14"
+    &&  td3Math::wrapper(td3Utility::makeVector("4","7.3"),"+") == "11.3"
+    &&  td3Math::wrapper(td3Utility::makeVector("7.4","8"), "+") == "15.4"
+    &&  td3Math::wrapper(td3Utility::makeVector("2.3","14.8"),"+") == "17.1")
         cout << "Success!";
     else
         cout << "Failed!";
