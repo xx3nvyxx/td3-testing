@@ -38,7 +38,7 @@ int testing::randi()
 
 double testing::randd()
 {
-    return rand() / (double)RAND_MAX;
+    return rand() % 20 + ((rand() % 10) / (double)10);
 }
 
 template <typename T, typename Y>
@@ -68,9 +68,14 @@ int testing::test(string op)
     double d1 = randd(), d2 = randd(), d3 = randd(), d4 = randd();
     cout << "Testing " << op << ": ";
     error += (td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(i1,0),td3Utility::toString(i2,0)),op) != result(i1,i2,op));
+//    cout << endl << "\"" << td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(i1,0),td3Utility::toString(i2,0)),op) << "\"=\"" << result(i1,i2,op) << "\"";
     error += (td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(i3,0),td3Utility::toString(d1,1)),op) != result(i3,d1,op));
+//    cout << endl << td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(i3,0),td3Utility::toString(d1,0)),op) << "=" << result(i3,d1,op);
     error += (td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(d2,1),td3Utility::toString(i4,0)),op) != result(d2,i4,op));
+//    cout << endl << td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(d2,0),td3Utility::toString(i4,0)),op) << "=" << result(d2,i4,op);
     error += (td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(d3,1),td3Utility::toString(d4,1)),op) != result(d3,d4,op));
+//    cout << endl << td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(d3,0),td3Utility::toString(d4,0)),op) << "=" << result(d3,d4,op);
+//    cout << endl;
     cout <<  error << " errors" << endl;
     return error;
 }
