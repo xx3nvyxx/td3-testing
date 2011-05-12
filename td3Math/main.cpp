@@ -67,7 +67,7 @@ int testing::test(string op)
     int i1 = randi(), i2 = randi(), i3 = randi(), i4 = randi();
     double d1 = randd(), d2 = randd(), d3 = randd(), d4 = randd();
     cout << "Testing " << op << ": ";
-    error += (td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(i1,0),td3Utility::toString(i2,0)),op) != result(i1,i2,op));
+    error += (td3Math::wrapper({{td3Utility::toString(i1,0)},{td3Utility::toString(i2,0)}},op) != result(i1,i2,op));
 //    cout << endl << "\"" << td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(i1,0),td3Utility::toString(i2,0)),op) << "\"=\"" << result(i1,i2,op) << "\"";
     error += (td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(i3,0),td3Utility::toString(d1,1)),op) != result(i3,d1,op));
 //    cout << endl << td3Math::wrapper(td3Utility::makeVector(td3Utility::toString(i3,0),td3Utility::toString(d1,0)),op) << "=" << result(i3,d1,op);
